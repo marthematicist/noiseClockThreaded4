@@ -1,5 +1,7 @@
 // color calulation thread
 
+float alpha = 0.25;
+
 color bgColor = color( 0 , 0 , 0 );
 color outlineColor = color( 255 , 255 , 255 );
 
@@ -38,7 +40,7 @@ void threadCCalc0() {
           }
         }
       }
-      col0a[ i ] = c;
+      col0a[i] = lerpColor( col0a[i] ,  c , alpha );
     }
     //colFlg_thread_Rendering0 = false;
     colFlg_thread_doneRendering0 = true;
@@ -88,7 +90,7 @@ void threadCCalc1() {
           }
         }
       }
-      col1a[ i ] = c;
+      col1a[i] = lerpColor( col1a[i] ,  c , alpha );
     }
     //colFlg_thread_Rendering1 = false;
     colFlg_thread_doneRendering1 = true;
